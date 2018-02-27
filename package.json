@@ -29,5 +29,9 @@
     "url-loader": "^0.6.2",
     "webpack": "^1.15.0",
     "webpack-dev-server": "^1.15.0"
+  },
+  "dependencies": {
+    "font-awesome": "^4.7.0",
+    "hogan": "^1.0.2"
   }
 }

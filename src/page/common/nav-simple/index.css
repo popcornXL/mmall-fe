@@ -1,0 +1,17 @@
+/*
+* @Author: popcornXL
+* @Date:   2018-02-27 12:49:12
+* @Last Modified by:   popcornXL
+* @Last Modified time: 2018-02-27 12:56:08
+*/
+body{
+    height: 60px;
+    line-height: 60px;
+    border-bottom: 1px solid #ddd;
+    background: #fff;
+}
+.nav-simple .logo{
+    font-size: 26px;
+    font-weight: bold;
+    color: #c60023;
+}

@@ -2,7 +2,7 @@
 * @Author: popcornXL
 * @Date:   2018-02-23 20:49:58
 * @Last Modified by:   popcornXL
-* @Last Modified time: 2018-02-25 15:16:52
+* @Last Modified time: 2018-02-27 21:57:36
 */
 var webpack             = require('webpack');
 var ExtractTextPlugin   = require('extract-text-webpack-plugin');
@@ -12,10 +12,11 @@ var HtmlWebpackPlugin   = require('html-webpack-plugin');
 var WEBPACK_ENV         = process.env.WEBPACK_ENV || 'dev';
 console.log(WEBPACK_ENV);
 //獲取html-webpack-plugin參數的方法
-var getHtmlConfig = function(name){
+var getHtmlConfig = function(name,title){
     return{
         template : './src/view/' + name + '.html',
         filename : 'view/' + name + '.html',
+        title    : title,
         inject   : true,
         hash     : true,
         chunks   : ['common', name]
@@ -24,9 +25,10 @@ var getHtmlConfig = function(name){
 //webpack config
 var config = {
     entry: {
-        'common': ['./src/page/common/index.js', 'webpack-dev-server/client?http://localhost:8888/'],
-        'index' : ['./src/page/index/index.js'],
-        'login' : ['./src/page/login/index.js'],
+        'common'            : ['./src/page/common/index.js', 'webpack-dev-server/client?http://localhost:8888/'],
+        'index'             : ['./src/page/index/index.js'],
+        'login'             : ['./src/page/login/index.js'],
+        'result'            : ['./src/page/result/index.js'],
     },
     output: {
         path: './dist',
@@ -50,6 +52,15 @@ var config = {
             }
         ]
     },
+      resolve : {
+        alias : {
+            node_modules    : __dirname + '/node_modules',
+            util            : __dirname + '/src/util',
+            page            : __dirname + '/src/page',
+            service         : __dirname + '/src/service',
+            image           : __dirname + '/src/image'
+        }
+    },
     plugins: [
         //獨立通用模塊到js/base.js
         new webpack.optimize.CommonsChunkPlugin({
@@ -59,8 +70,9 @@ var config = {
         //把css單獨打包到文件裡
         new ExtractTextPlugin("css/[name].css"),
         //html模板的處理
-        new HtmlWebpackPlugin(getHtmlConfig('index')),
-        new HtmlWebpackPlugin(getHtmlConfig('login')),
+        new HtmlWebpackPlugin(getHtmlConfig('index',  '首頁')),
+        new HtmlWebpackPlugin(getHtmlConfig('login',  '用戶登錄')),
+        new HtmlWebpackPlugin(getHtmlConfig('result', '操作结果')),
     ]
  };
 
