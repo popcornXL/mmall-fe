@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%= require('html-loader!./layout/head-common.html')  %>
+        <title><%= htmlWebpackPlugin.options.title%> - COMEMALL電商平台</title>
+    </head>
+    <body>
+        <%= require('html-loader!./layout/nav-simple.html')  %>
+        <div class="page-wrap">
+            <div class="w">
+                <div class="user-con">
+                    <div class="user-title">用戶註冊</div>
+                    <div class="user-box">
+                        <div class="error-item">
+                            <i class="fa fa-minus-circle error-icon"></i>
+                            <p class="err-msg">Error</p>
+                        </div>
+                        <div class="user-item">
+                            <label class="user-label" for="username">
+                                <i class="fa fa-user"></i>
+                            </label>
+                            <input class="user-content" id="username" placeholder="請輸入用戶名" autocomplete="off">
+                        </div>
+                        <div class="user-item">
+                            <label class="user-label" for="password">
+                                <i class="fa fa-lock"></i>
+                            </label>
+                            <input type="password" class="user-content" id="password" placeholder="請輸入密碼" autocomplete="off">
+                        </div>
+                        <div class="user-item">
+                            <label class="user-label" for="password-confirm">
+                                <i class="fa fa-lock"></i>
+                            </label>
+                            <input type="password" class="user-content" id="password-confirm" placeholder="請再次輸入密碼" autocomplete="off">
+                        </div>
+                        <div class="user-item">
+                            <label class="user-label" for="phone">
+                                <i class="fa fa-phone"></i>
+                            </label>
+                            <input class="user-content" id="phone" placeholder="請輸入手機號碼" autocomplete="off">
+                        </div>
+                        <div class="user-item">
+                            <label class="user-label" for="email">
+                                <i class="fa fa-envelope"></i>
+                            </label>
+                            <input class="user-content" id="email" placeholder="請輸入信箱" autocomplete="off">
+                        </div>
+                        <div class="user-item">
+                            <label class="user-label" for="question">
+                                <i class="fa fa-question"></i>
+                            </label>
+                            <input class="user-content" id="question" placeholder="請輸入密碼提示問題" autocomplete="off">
+                        </div>
+                        <div class="user-item">
+                            <label class="user-label" for="answer">
+                                <i class="fa fa-key"></i>
+                            </label>
+                            <input class="user-content" id="answer" placeholder="請輸入密碼提示問題答案" autocomplete="off">
+                        </div>
+                        <a class="btn btn-submit" id="submit">立即註冊</a>
+                        <div class="link-item">
+                            <a class="link" href="./user-login.html">已有帳號，去登錄>></a>
+                        </div>
+                    </div>  
+                </div>                
+            </div>
+        </div>
+        <%= require('html-loader!./layout/footer.html')  %>
+    </body>
+</html>
