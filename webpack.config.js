@@ -2,7 +2,7 @@
 * @Author: popcornXL
 * @Date:   2018-02-23 20:49:58
 * @Last Modified by:   popcornXL
-* @Last Modified time: 2018-03-06 19:13:47
+* @Last Modified time: 2018-03-06 20:38:11
 */
 var webpack             = require('webpack');
 var ExtractTextPlugin   = require('extract-text-webpack-plugin');
@@ -32,7 +32,8 @@ var config = {
         'cart'              : ['./src/page/cart/index.js'],
         'order-confirm'     : ['./src/page/order-confirm/index.js'],
         'order-list'        : ['./src/page/order-list/index.js'],
-        'order-detail'        : ['./src/page/order-detail/index.js'],
+        'order-detail'      : ['./src/page/order-detail/index.js'],
+        'payment'           : ['./src/page/payment/index.js'],
         'user-login'        : ['./src/page/user-login/index.js'],
         'user-register'     : ['./src/page/user-register/index.js'],
         'user-center'       : ['./src/page/user-center/index.js'],
@@ -88,6 +89,7 @@ var config = {
         new HtmlWebpackPlugin(getHtmlConfig('order-confirm',  '訂單確認')),
         new HtmlWebpackPlugin(getHtmlConfig('order-list',  '訂單清單')),
         new HtmlWebpackPlugin(getHtmlConfig('order-detail',  '訂單詳細')),
+        new HtmlWebpackPlugin(getHtmlConfig('payment',  '訂單支付')),
         new HtmlWebpackPlugin(getHtmlConfig('user-login',  '用戶登錄')),
         new HtmlWebpackPlugin(getHtmlConfig('user-register', '用戶註冊')),
         new HtmlWebpackPlugin(getHtmlConfig('user-pass-reset', '找回密碼')),

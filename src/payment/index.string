@@ -1,0 +1,5 @@
+<p class="payment-tips">訂單提交成功，請盡快支付!訂單號碼為:{{orderNo}}</p>
+<p class="payment-tips enhance">請使用app掃描如下二維碼進行支付:</p>
+<div class="img-con">
+    <img class="qr-code" src="{{qrUrl}}" alt="支付二維碼" />
+</div>
