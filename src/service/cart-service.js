@@ -2,7 +2,7 @@
 * @Author: popcornXL
 * @Date:   2018-02-27 15:11:19
 * @Last Modified by:   popcornXL
-* @Last Modified time: 2018-02-27 15:13:07
+* @Last Modified time: 2018-03-06 15:29:45
 */
 
 'use strict';
@@ -18,7 +18,7 @@ var _cart = {
             error   : reject
         });
     },
-    // 加到購物車车
+    // 加到購物車
     addToCart : function(productInfo, resolve, reject){
         _mm.request({
             url     : _mm.getServerUrl('/cart/add.do'),

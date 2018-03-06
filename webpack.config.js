@@ -2,13 +2,13 @@
 * @Author: popcornXL
 * @Date:   2018-02-23 20:49:58
 * @Last Modified by:   popcornXL
-* @Last Modified time: 2018-03-05 20:24:34
+* @Last Modified time: 2018-03-06 15:59:01
 */
 var webpack             = require('webpack');
 var ExtractTextPlugin   = require('extract-text-webpack-plugin');
 var HtmlWebpackPlugin   = require('html-webpack-plugin');
 
-//環境變亮配置, dev / online
+//環境變量配置, dev / online
 var WEBPACK_ENV         = process.env.WEBPACK_ENV || 'dev';
 console.log(WEBPACK_ENV);
 //獲取html-webpack-plugin參數的方法
@@ -27,6 +27,9 @@ var config = {
     entry: {
         'common'            : ['./src/page/common/index.js', 'webpack-dev-server/client?http://localhost:8888/'],
         'index'             : ['./src/page/index/index.js'],
+        'list'              : ['./src/page/list/index.js'],
+        'detail'            : ['./src/page/detail/index.js'],
+        'cart'              : ['./src/page/cart/index.js'],
         'user-login'        : ['./src/page/user-login/index.js'],
         'user-register'     : ['./src/page/user-register/index.js'],
         'user-center'       : ['./src/page/user-center/index.js'],
@@ -76,6 +79,9 @@ var config = {
         new ExtractTextPlugin("css/[name].css"),
         //html模板的處理
         new HtmlWebpackPlugin(getHtmlConfig('index',  '首頁')),
+        new HtmlWebpackPlugin(getHtmlConfig('list',  '商品列表頁')),
+        new HtmlWebpackPlugin(getHtmlConfig('detail',  '商品詳細頁')),
+        new HtmlWebpackPlugin(getHtmlConfig('cart',  '購物車')),
         new HtmlWebpackPlugin(getHtmlConfig('user-login',  '用戶登錄')),
         new HtmlWebpackPlugin(getHtmlConfig('user-register', '用戶註冊')),
         new HtmlWebpackPlugin(getHtmlConfig('user-pass-reset', '找回密碼')),
