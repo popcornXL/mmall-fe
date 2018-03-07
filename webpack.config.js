@@ -2,7 +2,7 @@
 * @Author: popcornXL
 * @Date:   2018-02-23 20:49:58
 * @Last Modified by:   popcornXL
-* @Last Modified time: 2018-03-06 20:38:11
+* @Last Modified time: 2018-03-07 14:30:06
 */
 var webpack             = require('webpack');
 var ExtractTextPlugin   = require('extract-text-webpack-plugin');
@@ -16,6 +16,7 @@ var getHtmlConfig = function(name,title){
     return{
         template : './src/view/' + name + '.html',
         filename : 'view/' + name + '.html',
+        favicon  : './favicon.ico',
         title    : title,
         inject   : true,
         hash     : true,
@@ -41,10 +42,11 @@ var config = {
         'user-pass-reset'   : ['./src/page/user-pass-reset/index.js'],
         'user-pass-update'  : ['./src/page/user-pass-update/index.js'],
         'result'            : ['./src/page/result/index.js'],
+        'about'             : ['./src/page/about/index.js'],
     },
     output: {
-        path: './dist',
-        publicPath : '/dist',
+        path: __dirname + '/dist/',
+        publicPath : 'dev' === WEBPACK_ENV ? '/dist/' : '//s.popcornxl.com/mmall-fe/dist/',
         filename: 'js/[name].js'
     },
     externals : {
@@ -97,6 +99,7 @@ var config = {
         new HtmlWebpackPlugin(getHtmlConfig('user-center', '個人中心')),
         new HtmlWebpackPlugin(getHtmlConfig('user-center-update', '修改個人資料')),
         new HtmlWebpackPlugin(getHtmlConfig('result', '操作结果')),
+        new HtmlWebpackPlugin(getHtmlConfig('about', '關於COMEMALL')),
     ]
  };
 
