@@ -34,7 +34,7 @@
                         <span class="required">*</span>
                         詳細地址：
                     </label>
-                    <input class="form-item" id="receiver-address" placeholder="請精確到門牌號" value="{{data.receiverAddress}}"/>
+                    <input class="form-item" id="receiver-address" placeholder="請詳細填至門牌號" value="{{data.receiverAddress}}"/>
                 </div>
                 <div class="form-line">
                     <label class="label" for="receiver-phone">

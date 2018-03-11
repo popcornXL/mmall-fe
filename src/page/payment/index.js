@@ -2,7 +2,7 @@
 * @Author: popcornXL
 * @Date:   2018-03-07 17:32:22
 * @Last Modified by:   popcornXL
-* @Last Modified time: 2018-03-07 17:33:03
+* @Last Modified time: 2018-03-11 16:25:11
 */
 'use strict';
 
@@ -11,7 +11,7 @@ require('page/common/nav/index.js');
 require('page/common/header/index.js');
 var _mm             = require('util/mm.js');
 var _payment        = require('service/payment-service.js');
-var templateIndex   = require('./index.string');
+var templateIndex   = require('./index2.string');
 
 // page 邏輯部分
 var page = {
