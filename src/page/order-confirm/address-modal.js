@@ -2,7 +2,7 @@
 * @Author: popcornXL
 * @Date:   2018-03-05 17:13:16
 * @Last Modified by:   popcornXL
-* @Last Modified time: 2018-03-06 18:55:56
+* @Last Modified time: 2018-03-11 11:11:16
 */
 
 'use strict';
@@ -126,7 +126,7 @@ var addressModal = {
             result.errMsg = '請選擇收件人所在鄉區';
         }
         else if(!receiverInfo.receiverAddress){
-            result.errMsg = '请输入收件人详细地址';
+            result.errMsg = '請輸入收件人詳細地址';
         }
         else if(!receiverInfo.receiverPhone){
             result.errMsg = '請輸入手機號碼';

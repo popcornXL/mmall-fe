@@ -54,15 +54,15 @@
                 <td class="cell cell-info">
                     <a class="link" href="./detail.html?productId={{productId}}" target="_blank">{{productName}}</a>
                 </td>
-                <td class="cell cell-price">￥{{currentUnitPrice}}</td>
+                <td class="cell cell-price">${{currentUnitPrice}}</td>
                 <td class="cell cell-count">{{quantity}}</td>
-                <td class="cell cell-total">￥{{totalPrice}}</td>
+                <td class="cell cell-total">${{totalPrice}}</td>
             </tr>
             {{/orderItemVoList}}
         </table>
         <p class="total">
             <span>訂單總價：</span>
-            <span class="total-price">￥{{payment}}</span>
+            <span class="total-price">${{payment}}</span>
         </p>
     </div>
 </div>
